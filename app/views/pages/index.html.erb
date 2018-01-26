@@ -167,7 +167,39 @@
           <% end %>
         </div>
         <div class="col-lg-6 col-lg-offset-3" id="contact-form">
-          <b>(<span id="red">*</span> Fields Are Required)</b></p>
+          <div class="text-center">
+            <%= form_for(@message) do |f| %> 
+              <% if flash.key?("success") %>
+                <% flash.each do |message_type, message| %>
+                  <%= content_tag(:div, message, class: "alert alert-#{message_type} text-center", id: "body-up", style: "font-size: 17px;") %>
+                <% end %>
+              <% else %>
+                <b>Fields With <span id="red">*</span> Are Required</b><br><br>
+                <% flash.each do |message_type, message| %>
+                  <% messages = message.split("=") %>
+                  <div class="alert alert-danger text-center" id="body-up", style="font-size: 17px;"><%= messages[0] %><br><%= messages[1] %><br><%= messages[2] %></div>                
+                <% end %>
+
+                <label>Name <span id="red">*</span></label>
+                <%= f.text_field :name, required: true, class: "form-control" %><br>
+
+                <label>Email <span id="red">*</span></label>
+                <%= f.text_field :email, type: "email", required: true, class: "form-control" %><br>
+
+                <%= f.label :subject %>
+                <%= f.text_field :subject, class: "form-control" %><br>
+
+                <label>Message <span id="red">*</span></label>
+                <%= f.text_area :message, style: "resize: none;", rows: "10", required: true, class: "form-control" %><br>
+
+                <label>Captcha <span id="red">*</span></label><br>
+                <%= image_tag "captcha.png", style: "margin-bottom: 5px;" %>
+                <%= f.text_field :captcha, required: true, class: "form-control" %><br>
+
+                <%= f.submit "Send", class: "btn btn-fill btn-large btn-margin-right", id: "button2" %>
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>

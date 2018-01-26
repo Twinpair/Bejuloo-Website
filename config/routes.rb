@@ -6,5 +6,6 @@ Rails.application.routes.draw do
 
   resources :information, only: [:index, :update]
   resources :testimonials
+  resources :messages, only: [:index, :create, :destroy]
 
 end

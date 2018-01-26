@@ -117,15 +117,15 @@
       </div>
       <div class="macbook-wrap wp3">
         <div class="text-center" id="vimeo-iframe">
-          <iframe src="https://player.vimeo.com/video/<%= @information.video_featured %>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <iframe src="https://player.vimeo.com/video/<%= @information.video_featured.split('/').last %>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
       </div>
       <div class="responsive-feature-img text-center" id="vimeo-iframe-mobile">
-        <iframe src="https://player.vimeo.com/video/<%= @information.video_featured %>" width="320" height="180" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/<%= @information.video_featured.split('/').last %>" width="320" height="180" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
     </div>
   </section>
-  <!-- End About Section -->
+  <!-- End Video Section -->
 
   <!-- Start Testimonials Section-->
   <section class="testimonial-slider section-padding text-center" id="testimonials" style="background-image: url(<%= @information.testimonial_image? ? @information.testimonial_image.url : asset_path('testimonial-cover.jpg') %>)">

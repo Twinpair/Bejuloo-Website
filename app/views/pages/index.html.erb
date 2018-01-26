@@ -12,6 +12,7 @@
                 <li><a href="#features">Features</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#videos">Videos</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact Me</a></li>
               </ul>
@@ -47,7 +48,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center" id="intro-header">
-          <h2 id="intro-header-text"><u><b><%= @information.features_title %></b></u></h2>
+          <h2 id="intro-header-text"><b><%= @information.features_title %></b></h2>
         </div>
         <div class="col-md-4 intro-feature">
           <div class="intro-icon">
@@ -127,6 +128,22 @@
   </section>
   <!-- End Video Section -->
 
+  <!-- Start Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center" id="intro-header">
+          <h2 id="intro-header-text"><b><%= @information.portfolio_title %></b></h2>
+        </div>
+        <%= render partial: "project", collection: @projects %>
+        <div class="text-center">
+          <a href="<%= @information.portfolio_button_link %>" target="blank" class="btn btn-fill btn-large" id="button2"><%= @information.portfolio_button_text %></a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Portfolio Section -->
+
   <!-- Start Testimonials Section-->
   <section class="testimonial-slider section-padding text-center" id="testimonials" style="background-image: url(<%= @information.testimonial_image? ? @information.testimonial_image.url : asset_path('testimonial-cover.jpg') %>)">
     <div class="overlay">
@@ -196,7 +213,7 @@
                 <%= image_tag "captcha.png", style: "margin-bottom: 5px;" %>
                 <%= f.text_field :captcha, required: true, class: "form-control" %><br>
 
-                <%= f.submit "Send", class: "btn btn-fill btn-large btn-margin-right", id: "button2" %>
+                <%= f.submit "Send", class: "btn btn-fill btn-large btn-margin-right", id: "button1" %>
               <% end %>
             <% end %>
           </div>

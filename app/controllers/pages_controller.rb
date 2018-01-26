@@ -6,9 +6,10 @@ class PagesController < ApplicationController
     @information = Information.first
     @testimonials = Testimonial.all
     @message = Message.new
+    @projects = get_behance_projects
   end
 
   def edit
   end
-  
+
 end

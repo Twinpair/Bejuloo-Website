@@ -115,6 +115,16 @@
         <label style="text-align: left;">Note: If you want to link to a section on the site, you must input the section with '#' in front of it. Example: #about<br>Sections available: #hero, #features, #about, #videos, #testimonials, #contact<br>Otherwise you can link to any other webpage</label>
         <%= f.text_field :video_button_link , class: "form-control" %><br>
 
+        <%= f.label :portfolio_title %>
+        <%= f.text_field :portfolio_title , class: "form-control" %><br>
+
+        <%= f.label :portfolio_button_text %>
+        <%= f.text_field :portfolio_button_text , class: "form-control" %><br>
+
+        <%= f.label :portfolio_button_link %>
+        <label style="text-align: left;">Note: If you want to link to a section on the site, you must input the section with '#' in front of it. Example: #about<br>Sections available: #hero, #features, #about, #videos, #testimonials, #contact<br>Otherwise you can link to any other webpage</label>
+        <%= f.text_field :portfolio_button_link , class: "form-control" %><br>
+
         <%= f.label :testimonial_image %>
         <%= f.file_field :testimonial_image, accept: 'image/jpeg,image/gif,image/png', class: "form-control" %><br>
         <p><b>Current Testimonial Image:</b><%= image_tag(@information.testimonial_image? ? @information.testimonial_image.url : asset_path('testimonial-cover.jpg'), style: 'width: 100%') %></p><br>

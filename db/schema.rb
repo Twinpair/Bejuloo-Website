@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180126032539) do
+ActiveRecord::Schema.define(version: 20180126075702) do
 
   create_table "information", force: :cascade do |t|
     t.string   "header_image"
@@ -58,6 +58,9 @@ ActiveRecord::Schema.define(version: 20180126032539) do
     t.string   "features_left_title"
     t.string   "features_middle_title"
     t.string   "features_right_title"
+    t.string   "portfolio_title"
+    t.string   "portfolio_button_text"
+    t.string   "portfolio_button_link"
   end
 
   create_table "messages", force: :cascade do |t|

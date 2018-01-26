@@ -1,0 +1,25 @@
+<div class="col-md-4" data-toggle="modal" data-target="#project_view<%= project["id"] %>" id="project_card">
+            <div class="thumbnail">
+              <img src="<%= project["covers"]["original"] %>" alt="<%= project["name"] %>" class="img-responsive">
+              <div class="caption">
+                <h4 class="text-center"><%= project["name"] %></h4>
+              </div>
+            </div>
+          </div>
+          <div class="modal fade product_view" id="project_view<%= project["id"] %>">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <a href="#" data-dismiss="modal" class="class pull-right"><span class="glyphicon glyphicon-remove"></span></a>
+                  <h3 class="modal-title text-center"><%= project["name"] %></h3>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    <div class="col-md-12 product_img">
+                      <img src="<%= project["modules"][0]["sizes"]["original"] %>" class="img-responsive">
+                    </div>
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>

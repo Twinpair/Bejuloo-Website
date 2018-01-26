@@ -31,7 +31,8 @@ private
       :features_right_link_text, :features_right_link, :features_left_icon, 
       :features_middle_icon, :features_right_icon, :about_image, :phone, :email, 
       :features_title, :features_left_title, :features_middle_title, 
-      :features_right_title)
+      :features_right_title, :portfolio_title, :portfolio_button_text, 
+      :portfolio_button_link)
   end
 
 end

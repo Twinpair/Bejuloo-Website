@@ -1,5 +1,7 @@
 class TestimonialsController < ApplicationController
 
+  before_action :authenticate
+
   def index
     @testimonials = Testimonial.all
     #Counter is used to add a row div every 4 items

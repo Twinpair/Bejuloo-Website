@@ -1,5 +1,5 @@
   <!-- Start Hero Section -->
-  <section class="hero" id="hero">
+  <section class="hero" id="hero" style="background-image: url(<%= @information.header_image? ? @information.header_image.url : asset_path('hero.jpg') %>)">
     <!-- Start Navigation Bar -->
     <section class="navigation">
       <header>
@@ -9,11 +9,11 @@
             <nav>
               <ul class="primary-nav">
                 <li><a href="#hero">Home</a></li>
-                <li><a href="#choose-us">Features</a></li>
-                <li><a href="#features">Our Services</a></li>
-                <li><a href="#assets">About Us</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#videos">Videos</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#contact">Contact Me</a></li>
               </ul>
             </nav>
           </div>
@@ -29,11 +29,11 @@
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
             <div class="hero-content text-center">
-              <p class="intro">Hello there! I am</p>
-              <h1>Beatriz Jude Lorzano</h1>
-              <p class="description">I am a freelance illustrator/graphic artist from the Philippines. I work at best in portraiture, concept art, t-shirt design, album artwork, and WPAP art.</p>
-              <a href="#assets" class="btn btn-fill btn-large btn-margin-right" id="button1">About Me</a>
-              <a href="#contact" class="btn btn-fill btn-large btn-margin-right" id="button2">Contact Me</a> 
+              <p class="intro"><%= @information.header_intro %></p>
+              <h1><%= @information.name %></h1>
+              <p class="description"><%= @information.header_description %></p>
+              <a href="<%= @information.header_button_left_link %>" class="btn btn-fill btn-large btn-margin-right" id="button1" target="blank"><%= @information.header_button_left_text %></a>
+              <a href="<%= @information.header_button_right_link %>" class="btn btn-fill btn-large btn-margin-right" id="button2" target="blank"><%= @information.header_button_right_text %></a> 
             </div>
           </div>
         </div>
@@ -42,93 +42,93 @@
   </section>
   <!-- End Hero Section -->
 
-  <!-- Start Intro Section -->
-  <section class="intro section-padding" id="choose-us">
+  <!-- Start Features Section -->
+  <section class="intro section-padding" id="features">
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center" id="intro-header">
-          <h2 id="intro-header-text"><u><b>Types of work</b></u></h2>
+          <h2 id="intro-header-text"><u><b><%= @information.features_title %></b></u></h2>
         </div>
         <div class="col-md-4 intro-feature">
           <div class="intro-icon">
-            <i class="fa fa-user fa-3x bolt-icon" aria-hidden="true"></i>
+            <i class="fa fa-<%= @information.features_left_icon %> fa-3x bolt-icon" aria-hidden="true"></i>
           </div>
           <div class="intro-content">
-            <h5><b>Portraiture</b></h5>
-            <p>A portrait is typically defined as a representation of a specific individual, such as the artist might meet in life. A portrait does not merely record someone’s features, however, but says something about who he or she is, offering a vivid sense of a real person’s presence. <a href="https://www.metmuseum.org/toah/hd/port/hd_port.htm" target="blank">Read more here.</a></p>
+            <h5><b><%= @information.features_left_title %></b></h5>
+            <p><%= @information.features_left_text %> <a href="<%= @information.features_left_link %>" target="blank"><%= @information.features_left_link_text %></a></p>
           </div>
         </div>
         <div class="col-md-4 intro-feature">
           <div class="intro-icon">
-            <i class="fa fa-pencil fa-3x clock-icon" aria-hidden="true"></i>
+            <i class="fa fa-<%= @information.features_middle_icon %> fa-3x clock-icon" aria-hidden="true"></i>
           </div>
           <div class="intro-content">
-            <h5><b>Concept Art</b></h5>
-            <p>The main goal of concept art is to convey a visual representation of a design, idea, and/or mood for use in films, video games, animation, or comic books before it is put into the final product. <a href="https://www.creativebloq.com/career/what-concept-art-11121155" target="blank">Read more here.</a></p>
+            <h5><b><%= @information.features_middle_title %></b></h5>
+            <p><%= @information.features_middle_text %> <a href="<%= @information.features_middle_link %>" target="blank"><%= @information.features_middle_link_text %></a></p>
           </div>
         </div>
         <div class="col-md-4 intro-feature">
           <div class="intro-icon">
-            <i class="fa fa-paint-brush fa-3x users-icon" aria-hidden="true"></i>
+            <i class="fa fa-<%= @information.features_right_icon %> fa-3x users-icon" aria-hidden="true"></i>
           </div>
           <div class="intro-content last">
-            <h5><b>WPAP</b></h5>
-            <p>WPAP (Wedha Pop Art Portrait) is human portrait illustration style (usually famous figures) dominated flat fields bloom color is placed in the front, middle, and back to cause dimension. <a href="https://hubpages.com/art/wedha-pop-art-portrait-wpap" target="blank">Read more here.</a></p>
+            <h5><b><%= @information.features_right_title %></b></h5>
+            <p><%= @information.features_right_text %> <a href="<%= @information.features_right_link %>" target="blank"><%= @information.features_right_link_text %></a></p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- End Intro Section -->
+  <!-- End Features Section -->
 
-  <!-- Start Services Section -->
-  <section class="features section-padding text-center" id="features">
+  <!-- Start About Section -->
+  <section class="features section-padding text-center" id="about" style="background-image: url(<%= @information.about_image? ? @information.about_image.url : asset_path('me.jpg') %>)">
     <div class="container">
       <div class="row">
         <div class="col-md-6 col-md-offset-6">
           <div class="feature-list">
             <div class="text-center">
-              <h3><b>Facts About Me and Freelancing Experiences</b></h3>
+              <h3><b><%= @information.about_title %></b></h3>
             </div>
-            <p>I am a 19 years old student from the Philippines and I am currently one academic year away from graduating Computer Science in the Pamantasan ng Lungsod ng Maynila. I have experienced working as an freelance illustrator for multiple clients in the past 3 years. I have done several graphic designs before like: brand poster, branding identity, t-shirt designs, portraiture and concept art. I never fail to become diligent with every art piece that I did and I also value deadlines. As a home-based employee, I am always responsive to the client's inquiries and I also value their trust.</p>
+            <p><%= @information.about_description %></p>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- End Services Section -->
+  <!-- End About Section -->
 
-  <!-- Start About Section -->
-  <section class="features-extra section-padding" id="assets">
+  <!-- Start Video Section -->
+  <section class="features-extra section-padding" id="videos">
     <div class="container">
       <div class="row">
         <div class="col-md-5">
           <div>
             <div class="text-center">
-              <h3><u><b>I make videos!</b></u></h3>
+              <h3><b><%= @information.video_title %></b></h3>
             </div>
-            <p>Most of the videos that I make and edit are only 6-7 seconds long. I appreciate the challenge in compressing everything in a little time and I think it brings out more of my creativity!</p>
-            <p>The tools that I use in creating and editing videos are: Canon 1300D, 50 mm F1.8 lens, Canon Kit lens, Sony Vegas Pro and Adobe After Effects. I give full credit to the artists on Soundcloud and Youtube for the music that I used.</p>
+            <p><%= @information.video_description_first %></p>
+            <p><%= @information.video_description_last %></p>
             <div class="text-center">
-              <a href="https://vimeo.com/bejuloo" target="blank" class="btn btn-fill btn-large" id="button1"><i class="fa fa-vimeo-square" aria-hidden="true"></i> Check out my vimeo for more </a>
+              <a href="<%= @information.video_button_link %>" target="blank" class="btn btn-fill btn-large" id="button1"><%= @information.video_button_text %></a>
             </div>
           </div>
         </div>
       </div>
       <div class="macbook-wrap wp3">
         <div class="text-center" id="vimeo-iframe">
-          <iframe src="https://player.vimeo.com/video/204843735" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+          <iframe src="https://player.vimeo.com/video/<%= @information.video_featured %>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
         </div>
       </div>
       <div class="responsive-feature-img text-center" id="vimeo-iframe-mobile">
-        <iframe src="https://player.vimeo.com/video/204843735" width="320" height="180" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <iframe src="https://player.vimeo.com/video/<%= @information.video_featured %>" width="320" height="180" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
     </div>
   </section>
   <!-- End About Section -->
 
   <!-- Start Testimonials Section-->
-  <section class="testimonial-slider section-padding text-center" id="testimonials">
+  <section class="testimonial-slider section-padding text-center" id="testimonials" style="background-image: url(<%= @information.testimonial_image? ? @information.testimonial_image.url : asset_path('testimonial-cover.jpg') %>)">
     <div class="overlay">
       <div class="container">
         <div class="row">
@@ -162,9 +162,15 @@
       <div class="row">
         <div class="col-md-12">
           <div class="text-center">
-            <h3><u><b>Contact Me</b></u></h3>
+            <h3><u><b><%= @information.contact_title %></b></u></h3>
           </div>
-          <p><b>You can get in touch with me through any of these methods.</b></p>
+          <p><b><%= @information.contact_description %></b></p>
+          <% unless @information.email.blank? %>
+            <p><b>Email: </b><%= @information.email %></p>
+          <% end %>
+          <% unless @information.phone.blank? %>
+            <p><b>Phone #: </b><%= @information.phone %></p>
+          <% end %>
         </div>
         <div class="col-lg-6 col-lg-offset-3" id="contact-form">
           <b>(<span id="red">*</span> Fields Are Required)</b></p>
@@ -181,10 +187,18 @@
         <div class="col-md-12">
           <div class="footer-links">
             <ul class="footer-group">
-              <li><a href="https://vimeo.com/bejuloo" id="vimeo" target="_blank"><i class="fa fa-vimeo" aria-hidden="true"></i> Vimeo</a></li>
-              <li><a href="https://www.facebook.com/BeatrizJude" id="facebook" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></li>
-              <li><a href="https://twitter.com/bejuloo" id="twitter" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> Twitter</a></li>
-              <li><a href="https://twitter.com/bejuloo" id="instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+              <% unless @information.behance.blank? %>
+                <li><a href="<%= @information.behance %>" id="behance" target="_blank"><i class="fa fa-behance-square" aria-hidden="true"></i> Behance</a></li>
+              <% end %>
+              <% unless @information.vimeo.blank? %>
+                <li><a href="<%= @information.vimeo %>" id="vimeo" target="_blank"><i class="fa fa-vimeo-square" aria-hidden="true"></i> Vimeo</a></li>
+              <% end %><% unless @information.facebook.blank? %>
+                <li><a href="<%= @information.facebook %>" id="facebook" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a></li>
+              <% end %><% unless @information.twitter.blank? %>
+                <li><a href="<%= @information.twitter %>" id="twitter" target="_blank"><i class="fa fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+              <% end %><% unless @information.instagram.blank? %>
+                <li><a href="<%= @information.instagram %>" id="instagram" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+              <% end %>
               <li class="pull-left copyright"><a href="http://www.eric-gonzalez.com/" target="_blank">Copyright © <span id="yellow">Eric Gonzalez</span>, All Rights Reserved</a></li>
             </ul>
           </div>

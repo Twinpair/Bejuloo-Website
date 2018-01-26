@@ -83,11 +83,10 @@ section.intro, section.features-extra, section.sign-up {
   background: #fff; }
 
 section.features{
-  background: url(<%= asset_url 'me.jpg' %>);
   background-size: cover; }
 @media screen and (max-width: 500px){
   section.features{
-    background: url(<%= asset_path 'me.jpg' %>) center;
+    background-position: center;
     background-size: cover; 
     padding-bottom: 50px;
   }
@@ -378,7 +377,7 @@ Hero
 ========================================================================== */
 .hero {
   min-height: 750px;
-  background: url(<%= asset_path 'hero.jpg' %>) center center;
+  background-position: center center;
   background-size: cover;
   position: relative; }
   .hero .down-arrow a {
@@ -658,7 +657,7 @@ Features-stack
 .testimonial-slider
 ========================================================================== */
 .testimonial-slider {
-  background: url(<%= asset_path 'testimonial-cover.jpg' %>) center;
+  background-position: center;
   background-size: cover; }
   .testimonial-slider .avatar {
     width: 82px;
@@ -742,7 +741,7 @@ Contact Section
 Footer
 ========================================================================== */
 footer {
-  background-color: #3D4351;
+  background-color: #363c48;
   position: relative; 
   font-weight:bold; }
   footer p {
@@ -811,7 +810,7 @@ footer {
   footer .footer-links {
     margin: 0 0 20px 0; }
 .copyright{
-  width: 700px;
+  width: 580px;
 }
 #facebook{
   color: #8b9dc3;
@@ -825,10 +824,14 @@ footer {
 #instagram{
   color: #e4447a;
 }
+#behance{
+  color: #3278ff;
+}
 #facebook:hover, 
 #vimeo:hover, 
 #twitter:hover, 
-#instagram:hover {
+#instagram:hover,
+#behance:hover {
   color: white;
 }
 

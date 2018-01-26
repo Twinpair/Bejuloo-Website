@@ -20,8 +20,8 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-# Ignore precompiled assets
-public/assets/*
+# Ignore uploaded test images.
+/public/uploads
 
-# Ignore .DS_Store
+# Ignore .DS_Store.
 .DS_Store

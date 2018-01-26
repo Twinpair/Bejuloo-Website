@@ -1,0 +1,14 @@
+<% if @counter % 3 == 0 && @counter != 0%>
+</div>
+        <div class="row">
+<% end %>  
+          <div class="col-lg-4 col-md-6 portfolio-item" style="margin-bottom: 10px;">
+            <div class="card h-100" onclick="document.location='<%=edit_testimonial_path(testimonial.id)%>'" style="cursor:pointer; border: solid;">
+              <div class="card-body">
+                <h4 class="card-title">"<%= testimonial.quote %>"</h4>
+                <p class="card-text">- <%= testimonial.source %></p>
+                <p>Order LIsted: <%= testimonial.order_listed %></p>
+              </div>
+            </div>
+          </div>
+        <% @counter = @counter + 1 %>

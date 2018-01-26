@@ -135,18 +135,12 @@
           <div class="col-md-12">
             <div class="flexslider">
               <ul class="slides">
-                <li>
-                  <h2>"You'll 100% be my first choice next time I need something like this done again, I can't express how grateful how I am and how incredible it looks."</h2>
-                  <p class="author">Client on a Wallpaper Art </p>
-                </li>
-                <li>
-                  <h2>"Can vouch for this woman. She just [did] a little illustration job for me with no need for revisions and super quick turnaround"</h2>
-                  <p class="author">Client from Reddit</p>
-                </li>
-                <li>
-                  <h2>"Mundane and unique work together! You're awesome! Im so glad I found you"</h2>
-                  <p class="author">Client on a Concept Art</p>
-                </li>
+                <% @testimonials.each do |testimonial| %>
+                  <li>
+                    <h2><%= testimonial.quote %></h2>
+                    <p class="author"><%= testimonial.source %></p>
+                  </li>
+                <% end%>
               </ul>
             </div>
           </div>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180125081421) do
+ActiveRecord::Schema.define(version: 20180126024016) do
 
   create_table "information", force: :cascade do |t|
     t.string   "header_image"
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(version: 20180125081421) do
     t.string   "features_left_title"
     t.string   "features_middle_title"
     t.string   "features_right_title"
+  end
+
+  create_table "testimonials", force: :cascade do |t|
+    t.text     "quote"
+    t.string   "source"
+    t.integer  "order_listed"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end

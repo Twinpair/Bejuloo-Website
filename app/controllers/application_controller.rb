@@ -1,8 +1,5 @@
 class ApplicationController < ActionController::Base
 
-  require 'net/http'
-  require 'json'
-
   protect_from_forgery with: :exception
 
 protected
@@ -14,17 +11,12 @@ protected
   end
 
   def get_behance_projects
-    url = "https://api.behance.net/v2/users/bejuloo/projects?client_id=#{ENV["BEHANCE_API_KEY"]}"
-    uri = URI(url)
-    response = Net::HTTP.get(uri)
-    user = JSON.parse(response)
+    # Initializing the client
+    client = Behance::Client.new(access_token: ENV["BEHANCE_API_KEY"])
+    user = client.user_projects("bejuloo")
     projects = []
     for i in 0..8
-      url = "https://www.behance.net/v2/projects/#{user["projects"][i]["id"]}?api_key=#{ENV["BEHANCE_API_KEY"]}"
-      uri = URI(url)
-      response = Net::HTTP.get(uri)
-      project = JSON.parse(response)
-      projects.push(project["project"])
+      projects.push(client.project(user[i]["id"]))
     end
     projects
   end

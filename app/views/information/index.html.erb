@@ -13,7 +13,7 @@
       <p><b>Header Right Button Text:</b> <%= @information.header_button_right_text %></p>
       <p><b>Header Right Button Link:</b> <%= @information.header_button_right_link %></p>
       <p><b>Header Image:</b></p>
-      <%= image_tag(@information.header_image, style: "width: 50%;") %><br><br>
+      <%= image_tag(@information.header_image? ? @information.header_image.url : asset_path('hero.jpg'), style: "width: 50%;") %><br><br>
       <p><b>Feature Section Title:</b> <%= @information.features_title %></p>
       <p><b>Features Left Title:</b> <%= @information.features_left_title %></p>
       <p><b>Features Left Text:</b> <%= @information.features_left_text %></p>
@@ -33,7 +33,7 @@
       <p><b>About Section Title:</b> <%= @information.about_title %></p>
       <p><b>About Me:</b> <%= @information.about_description %></p>
       <p><b>About Image:</b></p>
-      <%= image_tag(@information.about_image, style: "width: 50%;") %><br><br>
+      <%= image_tag(@information.about_image? ? @information.about_image.url : asset_path('me.jpg'), style: "width: 50%;") %><br><br>
       <p><b>Video Section Title:</b> <%= @information.video_title %></p>
       <p><b>Video Text First:</b> <%= @information.video_description_first %></p>
       <p><b>Video Text Last:</b> <%= @information.video_description_last %></p>
@@ -44,7 +44,7 @@
       <p><b>Portfolio Section Button Text:</b> <%= @information.portfolio_button_text %></p>
       <p><b>Portfolio Section Button Link:</b> <%= @information.portfolio_button_link %></p>
       <p><b>Testimonial Image:</b></p>
-      <%= image_tag(@information.testimonial_image, style: "width: 50%;") %><br><br>
+      <%= image_tag(@information.testimonial_image? ? @information.testimonial_image.url : asset_path('testimonial-cover.jpg'), style: "width: 50%;") %><br><br>
       <p><b>Contact Title:</b> <%= @information.contact_title %></p>
       <p><b>Contact Text:</b> <%= @information.contact_description %></p>
       <p><b>Phone:</b> <%= @information.email %></p>

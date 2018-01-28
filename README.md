@@ -1,3 +1,3 @@
 # Beatriz Jude Lorzano Personal Website
 
-http://bejuloo.com/
+http://www.bejuloo.com

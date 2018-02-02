@@ -47,6 +47,7 @@
       <%= image_tag(@information.testimonial_image? ? @information.testimonial_image.url : asset_path('testimonial-cover.jpg'), style: "width: 50%;") %><br><br>
       <p><b>Contact Title:</b> <%= @information.contact_title %></p>
       <p><b>Contact Text:</b> <%= @information.contact_description %></p>
+      <p><b>Resume Link:</b> <%= @information.resume %></p>
       <p><b>Phone:</b> <%= @information.email %></p>
       <p><b>Email:</b> <%= @information.phone %></p>
       <p><b>Vimeo Link:</b> <%= @information.vimeo %></p>

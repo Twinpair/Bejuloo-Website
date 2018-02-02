@@ -175,7 +175,11 @@
           <div class="text-center">
             <h3><u><b><%= @information.contact_title %></b></u></h3>
           </div>
-          <p><b><%= @information.contact_description %><br>Feel free to check out my <%= link_to "resume", @information.resume, target: "blank" %>.</b></p>
+          <p><b><%= @information.contact_description %>
+            <% unless @information.resume.blank? %>
+              <br>Feel free to check out my <%= link_to "resume", @information.resume, target: "blank" %>.
+            <% end %>
+            </b></p>
           <% unless @information.email.blank? %>
             <p><b>Email: </b><%= @information.email %></p>
           <% end %>

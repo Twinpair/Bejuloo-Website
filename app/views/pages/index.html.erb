@@ -137,7 +137,7 @@
         </div>
         <%= render partial: "project", collection: @projects %>
         <div class="text-center">
-          <a href="<%= @information.portfolio_button_link %>" target="blank" class="btn btn-fill btn-large" id="button2"><%= @information.portfolio_button_text %></a>
+          <a href="<%= @information.behance %>" target="blank" class="btn btn-fill btn-large" id="button2"><%= @information.portfolio_button_text %></a>
         </div>
       </div>
     </div>
@@ -214,7 +214,7 @@
                 <%= f.text_area :message, style: "resize: none;", rows: "10", required: true, class: "form-control" %><br>
 
                 <label>Captcha <span id="red">*</span></label><br>
-                <%= image_tag "captcha.png", style: "margin-bottom: 5px;" %>
+                <%= image_tag "ciaipiticihiai.jpg", style: "margin-bottom: 5px;" %>
                 <%= f.text_field :captcha, required: true, class: "form-control" %><br>
 
                 <%= f.submit "Send", class: "btn btn-fill btn-large btn-margin-right", id: "button1" %>

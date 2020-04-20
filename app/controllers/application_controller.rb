@@ -10,15 +10,19 @@ protected
     end
   end
 
-  def get_behance_projects
+  def get_behance_projects(username)
     cache "behance_projects#{Date.today}" do
       client = Behance::Client.new(access_token: ENV["BEHANCE_API_KEY"])
-      user = client.user_projects("bejuloo")
+      user = client.user_projects(username)
       projects = []
-      for i in 0..8
-        projects.push(client.project(user[i]["id"]))
+
+      if user
+        for i in 0..8
+          projects.push(client.project(user[i]["id"]))
+        end
       end
-      projects
+
+      return projects
     end
   end
   
